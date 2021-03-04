@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/menuLabel"
+        app:layout_constraintEnd_toEndOf="@id/menuLabel"
+        app:layout_constraintStart_toStartOf="@id/menuLabel"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/ic_favorite_menu" />
+
+    <TextView
+        android:id="@+id/menuLabel"
+        style="@style/TextStyleLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textColor="@color/color_white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@string/wish_list_label" />
+
+    <TextView
+        android:id="@+id/wishListNumber"
+        style="@style/TextStyleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textColor="@color/color_white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/iconImageView"
+        app:layout_constraintTop_toTopOf="@id/iconImageView"
+        tools:text="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/eventItemView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@color/color_card_default"
+    android:paddingBottom="16dp">
+
+    <com.eltonjhony.eventapp.presentation.views.MonthView
+        android:id="@+id/monthView"
+        android:layout_width="@dimen/month_view_width_dimension"
+        android:layout_height="@dimen/month_view_height_dimension"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/curved_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/eventImageView"
+        android:layout_width="@dimen/thumb_width_dimension"
+        android:layout_height="@dimen/thumb_height_dimension"
+        android:layout_marginStart="@dimen/thumb_start_margin_dimension"
+        android:layout_marginEnd="10dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toEndOf="@id/monthView"
+        app:layout_constraintTop_toBottomOf="@id/monthView"
+        tools:src="@mipmap/ic_launcher" />
+
+    <com.eltonjhony.eventapp.presentation.views.WeekDayView
+        android:id="@+id/weekDayView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/eventImageView"
+        app:layout_constraintEnd_toStartOf="@id/eventImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/eventImageView" />
+
+    <TextView
+        android:id="@+id/eventNameTextView"
+        style="@style/TextStyleSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/eventImageView"
+        app:layout_constraintTop_toTopOf="@id/eventImageView"
+        tools:text="Hamilton" />
+
+    <TextView
+        android:id="@+id/eventStartLabel"
+        style="@style/TextStyleLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/beginning_label"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/eventNameTextView"
+        app:layout_constraintTop_toBottomOf="@id/eventNameTextView" />
+
+    <TextView
+        android:id="@+id/eventStartTextView"
+        style="@style/TextStyleLight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/eventStartLabel"
+        app:layout_constraintTop_toBottomOf="@id/eventNameTextView"
+        tools:text="09:00 AM" />
+
+    <TextView
+        android:id="@+id/eventLocationLabel"
+        style="@style/TextStyleLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location_label"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/eventNameTextView"
+        app:layout_constraintTop_toBottomOf="@id/eventStartLabel" />
+
+    <TextView
+        android:id="@+id/eventLocationTextView"
+        style="@style/TextStyleLight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/eventStartTextView"
+        app:layout_constraintTop_toBottomOf="@id/eventStartTextView"
+        tools:text="Berlin" />
+
+    <com.eltonjhony.eventapp.presentation.views.FavoriteView
+        android:id="@+id/favoriteView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,88 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion sdkDependencies.androidCompileSdkVersion
+    buildToolsVersion sdkDependencies.androidBuildToolsVersion
+
+    defaultConfig {
+        applicationId "com.eltonjhony.eventapp"
+        minSdkVersion sdkDependencies.androidMinSdkVersion
+        targetSdkVersion sdkDependencies.androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation supportDependencies.appCompat
+    implementation supportDependencies.material
+    implementation supportDependencies.constraint
+    implementation supportDependencies.refreshLayout
+    implementation supportDependencies.idLingResource
+
+    implementation kotlinDependencies.stdLib
+    implementation kotlinDependencies.core
+
+    implementation coroutinesDependencies.core
+    implementation coroutinesDependencies.coroutinesAndroid
+
+    implementation lifecycleDependencies.lifeCycleViewModel
+
+    implementation retrofitDependencies.retrofitLib
+    implementation retrofitDependencies.retrofitGsonConverter
+    implementation retrofitDependencies.rxJavaAdapter
+
+    implementation koinDependencies.koinCore
+    implementation koinDependencies.koinCoreExt
+    implementation koinDependencies.koinAndroid
+    implementation koinDependencies.koinScope
+    implementation koinDependencies.koinViewModel
+
+    implementation roomDependencies.runtime
+    annotationProcessor roomDependencies.compiler
+    kapt roomDependencies.kaptCompiler
+    implementation roomDependencies.rxjava2
+
+    implementation glideDependencies.glide
+    kapt glideDependencies.compiler
+
+    implementation thirdPartyDependencies.carousel
+    implementation thirdPartyDependencies.okhttp
+
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.mockitoCore
+    testImplementation testDependencies.mockitoInline
+    testImplementation testDependencies.koinTest
+    androidTestImplementation testDependencies.junitExt
+    androidTestImplementation testDependencies.espressoCore
+    androidTestImplementation testDependencies.espressoIntents
+    androidTestImplementation testDependencies.uiautomator
+    androidTestImplementation(testDependencies.wiremock) {
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+        exclude group: 'asm', module: 'asm'
+        exclude group: 'org.json', module: 'json'
+    }
+    implementation testDependencies.httpComponents
+}

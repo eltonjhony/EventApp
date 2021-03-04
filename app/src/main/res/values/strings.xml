@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Event App</string>
+
+    <string name="to_be_defined_label">TBD</string>
+    <string name="beginning_label">Beginning</string>
+    <string name="upcoming_events_label">Upcoming Events</string>
+    <string name="location_label">Location</string>
+    <string name="my_wish_list_label">My Wish List</string>
+    <string name="wish_list_label">Wish List</string>
+    <string name="try_again_label">Try Again</string>
+
+    <string name="error_image_content_description">image error</string>
+
+    <string name="error_generic_description">do not worry, we are already taking care that this unexpected problem does not happen again :P</string>
+
+    <string name="connection_error_title">turbulence in the network</string>
+    <string name="connection_error_description">our cyber flight is shaking. check your internet to continue with us :P.</string>
+
+    <string name="data_not_found_error_description">your search does not bring results</string>
+    <string name="data_not_found_error_title">data not found</string>
+
+    <string name="empty_wish_list_error_description">use the heart symbol to add your favorite event</string>
+    <string name="empty_wish_list_error_title">empty wish list</string>
+    <string name="event_details_label">Event Details</string>
+    <string name="date_and_time_label">Date &amp; Time</string>
+    <string name="event_location_label">Event Location</string>
+    <string name="get_location_gps_label">Get Location (GPS)</string>
+    <string name="filter_label">Filter</string>
+
+</resources>
